@@ -967,7 +967,8 @@ body::after {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: all .3s ease-in-out
+  transition: all .3s ease-in-out;
+  padding-bottom: 1.25rem
 }
 .header__search.search-open {
   pointer-events: auto;
@@ -3211,6 +3212,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .header-top .button {
     min-width: initial
+  }
+  .tag {
+    padding: .1875rem .5rem
   }
   .spollers {
     gap: .625rem
