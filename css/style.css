@@ -827,11 +827,7 @@ body::after {
 .title_h2._pl-0 {
   padding-left: 0
 }
-.title_h3 {
-  opacity: .7
-}
 .title_h4 {
-  opacity: .7;
   font-size: 1.125rem
 }
 .title-dec {
@@ -1094,6 +1090,9 @@ body::after {
 .footer-copy__text a {
   transition: color .3s ease-in-out
 }
+.footer-copy__text:first-child {
+  order: 2
+}
 .footer-copy__text:nth-child(2) a {
   text-decoration: underline
 }
@@ -1286,9 +1285,6 @@ body::after {
 .about__inner blockquote {
   margin-bottom: .625rem
 }
-.about__inner blockquote sup {
-  color: var(--brown)
-}
 .about__img {
   flex: 0 0 31%
 }
@@ -1304,9 +1300,6 @@ body::after {
   height: .625rem;
   rotate: 45deg;
   background-color: rgba(210,195,255,.6)
-}
-.about__text {
-  color: var(--brown)
 }
 .numbers {
   display: flex
@@ -1356,7 +1349,6 @@ body::after {
   opacity: .7
 }
 .sale-item__title {
-  opacity: .7;
   margin-bottom: .625rem
 }
 .team-item {
@@ -3243,9 +3235,25 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .text-md {
     line-height: 1.5
   }
+  .footer-content .text-md {
+    font-size: .75rem
+  }
+  .info-item {
+    flex-direction: column;
+    flex: 1 1 100%;
+    align-items: flex-start
+  }
+  .footer-menu ul li {
+    flex: 1 1 100%
+  }
+  .footer-contacts__item {
+    flex: 1 1 100%
+  }
   .footer-copy {
-    justify-content: center;
-    text-align: center
+    justify-content: flex-start
+  }
+  .footer-copy__text:nth-child(2) {
+    order: -1
   }
   .navigation-block {
     flex-wrap: wrap
