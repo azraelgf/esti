@@ -999,6 +999,7 @@ body::after {
   justify-content: space-between
 }
 .header-top__logo {
+  flex: 0 0 8.9375rem;
   position: relative;
   z-index: 5
 }
@@ -3237,6 +3238,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .footer-content .text-md {
     font-size: .75rem
+  }
+  .header-top__logo {
+    flex: 0 0 7.5rem
   }
   .info-item {
     flex-direction: column;
