@@ -1,0 +1,59 @@
+//<FORM>
+.form {
+  &__title {
+    @include adaptiveValue("margin-bottom", 30, 20);
+
+    .popup & {
+      text-align: center;
+    }
+
+    .feedback & {
+      @media (max-width: $mobile) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    @include adaptiveValue("gap", 20, 10);
+  }
+
+  &__row {
+  }
+
+  &__column {
+  }
+
+  &__line {
+    border: 1px solid var(--primary30);
+
+    &._form-error {
+      border-color: var(--red);
+      background-color: var(--rose);
+    }
+  }
+
+  &__input {
+  }
+
+  &__button {
+  }
+
+  &__error {
+  }
+}
+
+//</FORM>
+
+// <BUTTONS>
+@import "button";
+
+// <INPUTS>
+@import "input";
+
+// <CHECK>
+@import "checkbox";
+
+// <SELECT>
+@import "select";

@@ -1,0 +1,35 @@
+.feedback {
+  // .feedback__container
+  &__container {
+  }
+
+  // .feedback__inner
+  &__inner {
+    background-color: var(--bg-secondary);
+    display: flex;
+    @include adaptiveValue("padding-top", 47, 30);
+    @include adaptiveValue("padding-bottom", 47, 30);
+    @include adaptiveValue("padding-left", 60, 20, 0, 1200, 768);
+    @include adaptiveValue("padding-right", 60, 20, 0, 1200, 768);
+    @include adaptiveValue("gap", 70, 20, 0, 1320, 992);
+    @media (max-width: $mobile) {
+      flex-wrap: wrap;
+      margin-left: toRem(-20);
+      margin-right: toRem(-20);
+    }
+  }
+
+  // .feedback__form
+  &__form {
+    flex: 1 1 auto;
+  }
+
+  // .feedback__img
+  &__img {
+    flex: 0 0 56%;
+    @media (max-width: $mobile) {
+      order: -1;
+      flex: 1 1 100%;
+    }
+  }
+}

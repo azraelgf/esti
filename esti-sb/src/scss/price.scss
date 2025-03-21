@@ -1,0 +1,21 @@
+.price-items {
+  display: grid;
+  @include adaptiveValue("gap", 60, 30);
+
+  &_two {
+    @media (min-width: $mobile) {
+      align-items: start;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.price-item {
+  display: grid;
+  gap: toRem(20);
+  // .price-item__title
+  &__title {
+    padding-bottom: toRem(10);
+    border-bottom: 1px solid rgba(#BCA7F7, .4);
+  }
+}

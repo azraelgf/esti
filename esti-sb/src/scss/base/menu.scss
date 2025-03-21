@@ -1,0 +1,385 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  // .menu__icon
+  &__icon {
+  }
+
+  &__info {
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__social {
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__action {
+    @media (min-width: $mobile) {
+      display: none;
+    }
+    @media (max-width: $mobile) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  // .menu__body
+  &__body {
+    @media (max-width: $mobile) {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      left: -100%;
+      top: 0;
+      overflow: auto;
+      padding: toRem(80) toRem(20) toRem(20);
+      background-color: var(--bg-primary);
+      transition: left 0.3s;
+      &::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: toRem(51);
+        left: -100%;
+        top: 0;
+        background-color: var(--bg-primary);
+        transition: left 0.3s;
+        z-index: 12;
+      }
+      .menu-open & {
+        left: 0;
+
+        &::before {
+          left: 0;
+        }
+      }
+    }
+
+    &-item {
+      @media (max-width: $mobile) {
+        & + & {
+          padding-top: toRem(20);
+          border-top: 1px solid var(--accent20);
+        }
+        &:not(:last-child) {
+          padding-bottom: toRem(20);
+        }
+      }
+    }
+  }
+
+  // .menu__list
+  &__list {
+    display: inline-flex;
+    gap: toRem(30);
+    @include adaptiveValue("gap", 30, 15, 0, 1200, 768);
+    @media (min-width: $mobile) {
+      align-items: center;
+    }
+    @media (min-width: $mobile) {
+      border-top: 1px solid var(--accent20);
+      padding-top: toRem(20);
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  // .menu__item
+  &__item {
+    @media (min-width: $pc) {
+      position: relative;
+    }
+    @media (max-width: $mobile) {
+      position: relative;
+    }
+  }
+
+  // .menu__link
+  &__link {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    @include adaptiveValue("font-size", 18, 14, 0, 1200, 768);
+    @media (min-width: $mobile) {
+      padding-bottom: toRem(4);
+    }
+    @media (max-width: $mobile) {
+      font-size: toRem(18);
+    }
+
+    @media (min-width: $mobile) {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        opacity: .8;
+        background-color: var(--accent);
+        transition: width 0.3s ease-in-out;
+
+        ._active & {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: $mobile) {
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+
+    &:active {
+      color: var(--inverse);
+    }
+  }
+}
+
+//Burger Icon
+.icon-menu {
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    position: relative;
+    width: toRem(24);
+    height: toRem(18);
+    z-index: 5;
+    @media (any-hover: none) {
+      cursor: default;
+    }
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: toRem(2);
+      background-color: var(--accent);
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - toRem(1));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+
+      &::before,
+      &::after {
+      }
+
+      &::before {
+        top: calc(50% - toRem(1));
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - toRem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+
+.submenu-wrapper {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: var(--white);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  translate: toRem(-100) toRem(40);
+  @include adaptiveValue("gap", 50, 15, 0, 1920, 1320);
+  @include adaptiveValue("padding", 60, 20, 0, 1320, 992);
+  @media (min-width: $pc) {
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: toRem(40);
+      top: toRem(-40);
+      left: 0;
+    }
+  }
+  @media (min-width: $mobile) {
+    display: flex;
+  }
+  @media (max-width: $pc) {
+    left: toRem(20);
+    translate: 0 0;
+  }
+  @media (max-width: $mobile) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: toRem(80) toRem(20) toRem(20);
+    background-color: var(--bg-primary);
+    &._submenu-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &_one {
+    @media (min-width: $mobile) {
+      padding: toRem(28) toRem(35);
+      translate: 0 toRem(40);
+    }
+  }
+
+  &__item {
+    opacity: 0;
+    flex: 1 1 32%;
+    @media (max-width: $mobile) {
+      overflow: auto;
+      background-color: var(--bg-primary);
+      padding: toRem(80) toRem(20) toRem(20);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    &:first-child {
+      @media (max-width: $mobile) {
+        ._submenu-active & {
+          opacity: 1;
+        }
+      }
+    }
+
+    &._submenu-open, &._insubmenu-open {
+      display: block;
+      opacity: 1;
+      animation: fade-in .3s ease-in-out;
+    }
+
+    &:not(:first-child) {
+      @include adaptiveValue("padding-left", 50, 15, 0, 1920, 1320);
+      @media (min-width: $mobile) {
+        border-left: 1px solid var(--accent20);
+      }
+      @media (max-width: $mobile) {
+        padding-left: toRem(20);
+      }
+    }
+  }
+}
+
+.submenu {
+  li {
+    line-height: 1.2;
+    @include adaptiveValue("font-size", 16, 14, 0, 1200, 768);
+    @media (max-width: $mobile) {
+      font-size: toRem(16);
+    }
+  }
+
+  li + li {
+    margin-top: toRem(15);
+    @media (max-width: $mobile) {
+      margin-top: toRem(10);
+    }
+  }
+
+  li:nth-child(2) {
+    @media (min-width: $mobile) {
+      margin-top: 0;
+    }
+  }
+
+  &_in {
+    display: grid;
+    gap: toRem(20);
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+
+    li + li {
+      margin-top: 0;
+    }
+
+    li {
+      @media (min-width: $mobile) {
+        &:first-child {
+          display: none;
+        }
+      }
+      @media (min-width: $pc-small) {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.submenu a {
+  font-weight: 300;
+  padding: toRem(10) 0;
+  transition: all 0.3s ease-in-out;
+  @media (min-width: $mobile) {
+    border-bottom: 1px solid transparent;
+    padding-bottom: toRem(5);
+  }
+  @media (min-width: $pc-small) {
+    white-space: nowrap;
+  }
+  @media (max-width: $mobile) {
+    padding: toRem(5) 0;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      font-weight: 500;
+      border-color: var(--accent20);
+    }
+  }
+
+  &:active {
+    color: var(--inverse);
+  }
+
+  &:first-child {
+    @media (min-width: $mobile) {
+      padding-top: 0;
+    }
+  }
+
+  &._submenu-open--active, &._insubmenu-open--active {
+    @media (min-width: $mobile) {
+      font-weight: 500;
+      border-color: var(--accent20);
+    }
+  }
+}
+
+/* Показываем меню при наведении */
+@media (min-width: $mobile) {
+  .menu__item:hover > .submenu-wrapper, .menu__item:hover > .submenu-wrapper > .submenu-wrapper__item {
+    opacity: 1;
+    visibility: visible;
+  }
+}

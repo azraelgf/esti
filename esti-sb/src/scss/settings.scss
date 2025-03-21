@@ -1,0 +1,99 @@
+// Подключение миксинов
+@import "base/mixins";
+
+// Подключение шрифтов
+// Если есть локальные файлы шрифтов, раскомментируйте
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import "fonts/fonts";
+
+// Подключение иконок
+// Если есть файл иконок, раскомментируйте
+ @import "fonts/icons";
+
+// ====================================================================================================================
+// Настройки шаблона
+// ====================================================================================================================
+
+// Шрифт по умолчанию
+$fontSize: toRem(14); // Размер шрифта по умолчанию
+
+// Основные цвета
+@import "base/colors-palette";
+
+// Параметры адаптивной сетки
+$minWidth: 360; // Минимальная ширина страницы
+$maxWidth: 1920; // Ширина макета
+$maxWidthContainer: 1400; // Ширина ограничивающего контейнера (0 = нет ограничения)
+$containerPadding: 40; // Общий отступ контейнера
+
+// Ширина контейнера с учетом отступа
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: toEm($containerWidth); // Для ПК и ноутбуков
+$pc-small: toEm(1199.98); // Для ПК и ноутбуков
+$tablet: toEm(991.98); // Для планшетов
+$mobile: toEm(767.98); // Для больших телефонов
+$mobileSmall: toEm(479.98); // Для маленьких телефонов
+
+// Тип адаптации:
+// 1 = отзывчивый (без брейкпоинтов)
+// 2 = по брейкпоинтам
+$responsiveType: 1;
+
+// Сброс стилей
+@import "base/null";
+
+// Стили для BODY
+body {
+	.lock & {
+		overflow: hidden; // Блокировка скроллинга
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+	.loaded & {
+		// Стили после загрузки
+	}
+}
+
+// Обертка
+.wrapper {
+	background-color: var(--bg-primary);
+	min-height: 100%; // Минимальная высота
+	display: flex; // Flex-контейнер
+	flex-direction: column; // Вертикальная ориентация
+	overflow: hidden; // Скрытие переполненных элементов
+	@supports (overflow: clip) {
+		overflow: clip; // Использование clip для переполнения
+	}
+	> main {
+		flex: 1 1 auto; // Основной контент занимает доступное пространство
+	}
+	> * {
+		min-width: 0; // Минимальная ширина для дочерних элементов
+	}
+}
+
+// Ограничивающий контейнер
+// Стили для всех классов с __container
+@if ($responsiveType == 1) {
+	[class*="__container"] {
+		@if ($maxWidthContainer > 0) {
+			max-width: toRem($containerWidth); // Максимальная ширина
+			margin: 0 auto; // Центрирование
+		}
+		@if ($containerPadding > 0) {
+			@if ($maxWidthContainer > 0) {
+				padding: 0 toRem(math.div($containerPadding, 2)); // Внутренние отступы
+				@media (min-width:$pc){
+					padding: 0 toRem(math.div(120, 2)); // Внутренние отступы
+				}
+			} @else {
+				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15); // Адаптивный левый отступ
+				@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15); // Адаптивный правый отступ
+			}
+		}
+	}
+}

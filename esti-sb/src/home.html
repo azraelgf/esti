@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+<body>
+<div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+        <section class="hero">
+            <picture>
+                <source media="(min-width:480px)" srcset="img/hero-bg.png">
+                <img src="img/hero-bg_m.png" alt="Image" class="hero__bg">
+            </picture>
+            <div class="hero__container">
+                <div class="hero__inner">
+                    <div class="hero-content">
+                        <div class="hero-content__subtitle"><span
+                                class="title-dec">Клиника современной косметологии</span></div>
+                        <h1 class="title title_h1">Косметология <br>
+                            и&nbsp;эстетическая медицина</h1>
+                        <div class="hero__text text-xl">Беспроцентная рассрочка на&nbsp;услуги клиники</div>
+                        <button class="hero-content__btn button" type="button" data-popup="#call">Получить
+                            консультацию
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <div class="services__container">
+                <h2 class="services__title title title_h2"><span class="title-dec">Услуги нашей клиники</span></h2>
+                <div class="services__items services-wrapper">
+                    <div class="services-wrapper__item">
+                        <div class="service">
+                            <img src="img/services/01.jpg" alt="Image" class="service__bg img">
+                            <a href="" class="stretched-link service__bottom">
+                                <div class="text-xl">Нитевой лифтинг</div>
+                                <i class="_icon-arrow-long-sl"></i>
+                            </a>
+                        </div>
+                        <div class="service">
+                            <img src="img/services/02.jpg" alt="Image" class="service__bg img">
+                            <a href="" class="service__bottom stretched-link">
+                                <div class="text-xl">SMAS лифтинг</div>
+                                <i class="_icon-arrow-long-sl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="services-wrapper__item">
+                        <div class="service">
+                            <img src="img/services/03.jpg" alt="Image" class="service__bg img">
+                            <a href="" class="stretched-link service__bottom">
+                                <div class="text-xl">Нитевой лифтинг</div>
+                                <i class="_icon-arrow-long-sl"></i>
+                            </a>
+                        </div>
+                        <div class="service">
+                            <img src="img/services/04.jpg" alt="Image" class="service__bg img">
+                            <a href="" class="stretched-link service__bottom">
+                                <div class="text-xl">RF-омоложение</div>
+                                <i class="_icon-arrow-long-sl"></i>
+                            </a>
+                        </div>
+                        <div class="service">
+                            <img src="img/services/05.jpg" alt="Image" class="service__bg img">
+                            <div class="service__bottom stretched-link">
+                                <div class="text-xl">Нитевой лифтинг</div>
+                                <i class="_icon-arrow-long-sl"></i>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <img src="img/services/06.jpg" alt="Image" class="service__bg img">
+                            <a href="" class="stretched-link service__bottom">
+                                <div class="text-xl">Аппаратная косметология</div>
+                                <i class="_icon-arrow-long-sl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="services-wrapper__item">
+                        <div class="service">
+                            <img src="img/services/07.jpg" alt="Image" class="service__bg img">
+                            <a href="" class="stretched-link service__bottom">
+                                <div class="text-xl">Терапевтическая косметология</div>
+                                <i class="_icon-arrow-long-sl"></i>
+                            </a>
+                        </div>
+                        <div class="service">
+                            <img src="img/services/08.jpg" alt="Image" class="service__bg img">
+                            <a href="" class="stretched-link service__bottom">
+                                <div class="text-xl">Нитевой лифтинг</div>
+                                <i class="_icon-arrow-long-sl"></i>
+                            </a>
+                        </div>
+                        <div class="service">
+                            <img src="img/services/09.jpg" alt="Image" class="service__bg img">
+                            <a href="" class="stretched-link service__bottom">
+                                <div class="text-xl">Жидкие нити</div>
+                                <i class="_icon-arrow-long-sl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-benefits" style="background-image: url(img/benefits-bg.png);">
+                    <div class="benefit">
+                        <div class="benefit__num title title_h1">1</div>
+                        <div class="benefit__text text-xl">Уникальные авторские методики</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit__num title title_h1">2</div>
+                        <div class="benefit__text text-xl">Современное оборудование</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit__num title title_h1">3</div>
+                        <div class="benefit__text text-xl">Квалифицированные специалисты</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit__num title title_h1">4</div>
+                        <div class="benefit__text text-xl">Методический центр
+                            по&nbsp;обучению врачей
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about section-bottom">
+            <div class="about__container">
+                <h2 class="about__title title title_h2"><span class="title-dec">Клиника современной косметологии Эсти Лайн</span>
+                </h2>
+                <div class="about__inner">
+                    <div class="about__img">
+                        <img class="ibg" src="img/about-img.jpg" alt="Image">
+                    </div>
+                    <div class="about__content">
+                        <blockquote class="text-md text-md_medium"><sup>“</sup>Истинная красота - это соответствие
+                            внутреннего "Я" нашему отражению в&nbsp;зеркале<sup>“</sup></blockquote>
+                        <div class="about__text text-md">Марина Борисовна Плоткина, главный врач клиники «ЭСТИ ЛАЙН»
+                        </div>
+                        <div class="about__info footer-content">
+                            <div class="footer-content__item text-l">
+                                ООО "Клиника современной косметологии "ЭСТИ ЛАЙН" создана в&nbsp;феврале 2005 года
+                                ведущими
+                                косметологами
+                                г.&nbsp;Екатеринбурга. Наша клиника владеvет уникальными методиками, с&nbsp;помощью
+                                которых
+                                действительно можно вернуть присущие молодости сияние кожи и&nbsp;блеск глаз, сохранить
+                                и&nbsp;приумножить драгоценное состояние красоты
+                            </div>
+                            <div class="footer-content__item text-l">
+                                Все медицинские процедуры выполняют высококлассные специалисты: врачи дерматокосметологи
+                                и&nbsp;косметологи. Медицинская деятельность осуществляется на&nbsp;основании Лицензии
+                                ЛО-66-01-005217
+                            </div>
+                        </div>
+                        <div class="about__numbers numbers">
+                            <div class="numbers__item">
+                                <strong>10+</strong>
+                                <div class="numbers__text text-l text-l_small">лет работы нашей клиники</div>
+                            </div>
+                            <div class="numbers__item">
+                                <strong>20</strong>
+                                <div class="numbers__text text-l text-l_small">профессиональных специалистов</div>
+                            </div>
+                            <div class="numbers__item">
+                                <strong>500+</strong>
+                                <div class="numbers__text text-l text-l_small">довольных клиентов</div>
+                            </div>
+                            <div class="numbers__item">
+                                <strong>0%</strong>
+                                <div class="numbers__text text-l text-l_small">рассрочка на&nbsp;все процедуры</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sale section-bottom">
+            <div class="sale__container">
+                <div class="navigation-block">
+                    <div class="navigation-block__title">
+                        <h2 class="title title_h2"><span class="title-dec">Акции</span></h2>
+                    </div>
+                    <div class="navigation-block__left">
+                        <div class="swiper-controls">
+                            <button type="button" class="sale-btn-prev swiper-button swiper-button-prev _icon-arrow-sl"
+                                    aria-label="Кнопка назад"></button>
+                            <button type="button" class="sale-btn-next swiper-button swiper-button-next _icon-arrow-sl"
+                                    aria-label="Кнопка вперед"></button>
+                        </div>
+                        <a href="" class="button button_outline" aria-label="переход на страницу Все акции">Все
+                            акции</a>
+                    </div>
+                </div>
+                <div class="sale__body swiper">
+                    <div class="sale__wrapper swiper-wrapper">
+                        <div class="sale__slide swiper-slide">
+                            <div class="sale-item">
+                                <div class="sale-item__img">
+                                    <div class="sale-item__beige beige _icon-fire">Выгодное предложение!</div>
+                                    <img src="img/sales/01.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="sale-item__body">
+                                    <h4 class="sale-item__title title title_h4">Волшебные подарки
+                                        для&nbsp;красавиц!</h4>
+                                    <time>1 января - 14 февраля</time>
+                                    <div class="sale-item__text text-l text-l_small">Комплимент в&nbsp;виде подарочного
+                                        сертификата придется по&nbsp;душе каждой
+                                    </div>
+                                </div>
+                                <div class="sale-item__footer">
+                                    <button class="sale-item__link link _icon-arrow-long-sl" type="button"
+                                            data-popup="#sale" aria-label="Открыть модальное окно с акцией">Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sale__slide swiper-slide">
+                            <div class="sale-item">
+                                <div class="sale-item__img">
+                                    <div class="sale-item__beige beige _icon-fire">Выгодное предложение!</div>
+                                    <img src="img/sales/02.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="sale-item__body">
+                                    <h4 class="sale-item__title title title_h4">Беспроцентная рассрочка</h4>
+                                    <time>1 января - 14 февраля</time>
+                                    <div class="sale-item__text text-l text-l_small">В нашей клинике вы можете оформить
+                                        беспроцентную рассрочку
+                                    </div>
+                                </div>
+                                <div class="sale-item__footer">
+                                    <button class="sale-item__link link _icon-arrow-long-sl" type="button"
+                                            data-popup="#sale"
+                                            aria-label="Открыть модальное окно с акцией">Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sale__slide swiper-slide">
+                            <div class="sale-item">
+                                <div class="sale-item__img">
+                                    <div class="sale-item__beige beige _icon-fire">Выгодное предложение!</div>
+                                    <img src="img/sales/03.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="sale-item__body">
+                                    <h4 class="sale-item__title title title_h4">Дарим скидку за&nbsp;отзыв
+                                        о&nbsp;нас!</h4>
+                                    <time>1 января - 14 февраля</time>
+                                    <div class="sale-item__text text-l text-l_small">Скидка 5% на одно посещение за
+                                        оставленный
+                                        о нас отзыв!
+                                    </div>
+                                </div>
+                                <div class="sale-item__footer">
+                                    <button class="sale-item__link link _icon-arrow-long-sl" type="button"
+                                            data-popup="#sale" aria-label="Открыть модальное окно с акцией">Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sale__slide swiper-slide">
+                            <div class="sale-item">
+                                <div class="sale-item__img">
+                                    <div class="sale-item__beige beige _icon-fire">Выгодное предложение!</div>
+                                    <img src="img/sales/02.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="sale-item__body">
+                                    <h4 class="sale-item__title title title_h4">Беспроцентная рассрочка</h4>
+                                    <time>1 января - 14 февраля</time>
+                                    <div class="sale-item__text text-l text-l_small">В нашей клинике вы можете оформить
+                                        беспроцентную рассрочку
+                                    </div>
+                                </div>
+                                <div class="sale-item__footer">
+                                    <button class="sale-item__link link _icon-arrow-long-sl" type="button"
+                                            data-popup="#sale"
+                                            aria-label="Открыть модальное окно с акцией">Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section class="team section-bottom">
+            <div class="team__container">
+                <div class="navigation-block">
+                    <div class="navigation-block__title">
+                        <h2 class="title title_h2"><span class="title-dec">Наши специалисты</span></h2>
+                    </div>
+                    <div class="navigation-block__left">
+                        <div class="swiper-controls">
+                            <button type="button" class="team-btn-prev swiper-button swiper-button-prev _icon-arrow-sl"
+                                    aria-label="Кнопка назад"></button>
+                            <button type="button" class="team-btn-next swiper-button swiper-button-next _icon-arrow-sl"
+                                    aria-label="Кнопка вперед"></button>
+                        </div>
+                        <a href="" class="button button_outline" aria-label="переход на страницу Все специалисты">Все
+                            специалисты</a>
+                    </div>
+                </div>
+                <div class="team__body swiper">
+                    <div class="team__wrapper swiper-wrapper">
+                        <div class="team__slide swiper-slide">
+                            <div class="team-item">
+                                <div class="team-item__img">
+                                    <img src="img/team/plotkina.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="team-item__body">
+                                    <h4 class="team-item__title title title_h4">Плоткина Марина Борисовна</h4>
+                                    <div class="team-item__text text-l text-l_small">Главный врач, стаж работы - 33
+                                        года
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team__slide swiper-slide">
+                            <div class="team-item">
+                                <div class="team-item__img">
+                                    <img src="img/team/yakunova.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="team-item__body">
+                                    <h4 class="team-item__title title title_h4">Якупова Анна Сергеевна</h4>
+                                    <div class="team-item__text text-l text-l_small">Врач-косметолог, дерматолог,
+                                        трихолог, стаж работы - 12 лет
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team__slide swiper-slide">
+                            <div class="team-item">
+                                <div class="team-item__img">
+                                    <img src="img/team/nigosan.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="team-item__body">
+                                    <h4 class="team-item__title title title_h4">Никогосян Томас Маркович</h4>
+                                    <div class="team-item__text text-l text-l_small">Врач-пластический хирург, стаж
+                                        работы - 6 лет
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team__slide swiper-slide">
+                            <div class="team-item">
+                                <div class="team-item__img">
+                                    <img src="img/team/mitaeva.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="team-item__body">
+                                    <h4 class="team-item__title title title_h4">Митяева Татьяна Владимировна</h4>
+                                    <div class="team-item__text text-l text-l_small">Врач-косметолог</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section class="equipment section-bottom">
+            <div class="equipment__container">
+                <div class="navigation-block">
+                    <div class="navigation-block__title">
+                        <h2 class="title title_h2"><span class="title-dec">Оборудование клиники</span></h2>
+                    </div>
+                    <div class="navigation-block__left">
+                        <div class="swiper-controls">
+                            <button type="button"
+                                    class="equipment-btn-prev swiper-button swiper-button-prev _icon-arrow-sl"
+                                    aria-label="Кнопка назад"></button>
+                            <button type="button"
+                                    class="equipment-btn-next swiper-button swiper-button-next _icon-arrow-sl"
+                                    aria-label="Кнопка вперед"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="equipment__body swiper">
+                    <div class="equipment__wrapper swiper-wrapper">
+                        <div class="equipment__slide swiper-slide">
+                            <div class="equipment-item">
+                                <div class="equipment-item__img">
+                                    <img src="img/equipment/01.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="equipment-item__body">
+                                    <h4 class="equipment-item__title title title_h4">MOTUS AX Moveo от&nbsp;DEKA </h4>
+                                    <div class="equipment-item__text text-l text-l_small">Сапфировый наконечник,
+                                        охлаждает кожу и&nbsp;полностью исключает неприятные ощущения
+                                    </div>
+                                </div>
+                                <div class="equipment-item__footer">
+                                    <a href="" class="equipment-item__link link _icon-arrow-long-sl"
+                                       aria-label="Перейти к подробнее об оборудовании">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment__slide swiper-slide">
+                            <div class="equipment-item">
+                                <div class="equipment-item__img">
+                                    <img src="img/equipment/01.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="equipment-item__body">
+                                    <h4 class="equipment-item__title title title_h4">MOTUS AX Moveo от&nbsp;DEKA </h4>
+                                    <div class="equipment-item__text text-l text-l_small">Сапфировый наконечник,
+                                        охлаждает кожу и&nbsp;полностью исключает неприятные ощущения
+                                    </div>
+                                </div>
+                                <div class="equipment-item__footer">
+                                    <a href="" class="equipment-item__link link _icon-arrow-long-sl"
+                                       aria-label="Перейти к подробнее об оборудовании">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment__slide swiper-slide">
+                            <div class="equipment-item">
+                                <div class="equipment-item__img">
+                                    <img src="img/equipment/01.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="equipment-item__body">
+                                    <h4 class="equipment-item__title title title_h4">MOTUS AX Moveo от&nbsp;DEKA </h4>
+                                    <div class="equipment-item__text text-l text-l_small">Сапфировый наконечник,
+                                        охлаждает кожу и&nbsp;полностью исключает неприятные ощущения
+                                    </div>
+                                </div>
+                                <div class="equipment-item__footer">
+                                    <a href="" class="equipment-item__link link _icon-arrow-long-sl"
+                                       aria-label="Перейти к подробнее об оборудовании">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment__slide swiper-slide">
+                            <div class="equipment-item">
+                                <div class="equipment-item__img">
+                                    <img src="img/equipment/01.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="equipment-item__body">
+                                    <h4 class="equipment-item__title title title_h4">MOTUS AX Moveo от&nbsp;DEKA </h4>
+                                    <div class="equipment-item__text text-l text-l_small">Сапфировый наконечник,
+                                        охлаждает кожу и&nbsp;полностью исключает неприятные ощущения
+                                    </div>
+                                </div>
+                                <div class="equipment-item__footer">
+                                    <a href="" class="equipment-item__link link _icon-arrow-long-sl"
+                                       aria-label="Перейти к подробнее об оборудовании">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment__slide swiper-slide">
+                            <div class="equipment-item">
+                                <div class="equipment-item__img">
+                                    <img src="img/equipment/01.jpg" alt="Image" class="ibg">
+                                </div>
+                                <div class="equipment-item__body">
+                                    <h4 class="equipment-item__title title title_h4">MOTUS AX Moveo от&nbsp;DEKA </h4>
+                                    <div class="equipment-item__text text-l text-l_small">Сапфировый наконечник,
+                                        охлаждает кожу и&nbsp;полностью исключает неприятные ощущения
+                                    </div>
+                                </div>
+                                <div class="equipment-item__footer">
+                                    <a href="" class="equipment-item__link link _icon-arrow-long-sl"
+                                       aria-label="Перейти к подробнее об оборудовании">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section class="licenses section-bottom">
+            <div class="licenses__container">
+                <div class="navigation-block">
+                    <div class="navigation-block__title">
+                        <h2 class="title title_h2"><span class="title-dec">Лицензии и&nbsp;сертификаты</span></h2>
+                    </div>
+                    <div class="navigation-block__left">
+                        <div class="swiper-controls">
+                            <button type="button"
+                                    class="licenses-btn-prev swiper-button swiper-button-prev _icon-arrow-sl"
+                                    aria-label="Кнопка назад"></button>
+                            <button type="button"
+                                    class="licenses-btn-next swiper-button swiper-button-next _icon-arrow-sl"
+                                    aria-label="Кнопка вперед"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="licenses__body swiper">
+                    <div class="licenses__wrapper swiper-wrapper" data-gallery>
+                        <div class="licenses__slide swiper-slide">
+                            <div class="licenses-item">
+                                <div class="licenses-item__img">
+                                    <img src="img/documents/01.jpg" data-src="img/documents/01.jpg" alt="Image"
+                                         class="ibg">
+                                </div>
+                                <div class="licenses-item__body">
+                                    <h4 class="licenses-item__title title title_h4">Лицензия</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="licenses__slide swiper-slide">
+                            <div class="licenses-item">
+                                <div class="licenses-item__img">
+                                    <img src="img/documents/02.jpg" data-src="img/documents/02.jpg" alt="Image"
+                                         class="ibg">
+                                </div>
+                                <div class="licenses-item__body">
+                                    <h4 class="licenses-item__title title title_h4">Лицензия</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="licenses__slide swiper-slide">
+                            <div class="licenses-item">
+                                <div class="licenses-item__img">
+                                    <img src="img/documents/03.jpg" data-src="img/documents/03.jpg" alt="Image"
+                                         class="ibg">
+                                </div>
+                                <div class="licenses-item__body">
+                                    <h4 class="licenses-item__title title title_h4">Лицензия</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="licenses__slide swiper-slide">
+                            <div class="licenses-item">
+                                <div class="licenses-item__img">
+                                    <img src="img/documents/01.jpg" data-src="img/documents/01.jpg" alt="Image"
+                                         class="ibg">
+                                </div>
+                                <div class="licenses-item__body">
+                                    <h4 class="licenses-item__title title title_h4">Лицензия</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="licenses__slide swiper-slide">
+                            <div class="licenses-item">
+                                <div class="licenses-item__img">
+                                    <img src="img/documents/02.jpg" data-src="img/documents/02.jpg" alt="Image"
+                                         class="ibg">
+                                </div>
+                                <div class="licenses-item__body">
+                                    <h4 class="licenses-item__title title title_h4">Лицензия</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+        </section>
+        <section class="reviews section-bottom">
+            <div class="reviews__container">
+                <div class="navigation-block">
+                    <div class="navigation-block__title">
+                        <h2 class="title title_h2"><span class="title-dec">Отзывы наших клиентов</span></h2>
+                    </div>
+                    <div class="navigation-block__left">
+                        <div class="swiper-controls">
+                            <button type="button"
+                                    class="reviews-btn-prev swiper-button swiper-button-prev _icon-arrow-sl"
+                                    aria-label="Кнопка назад"></button>
+                            <button type="button"
+                                    class="reviews-btn-next swiper-button swiper-button-next _icon-arrow-sl"
+                                    aria-label="Кнопка вперед"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews__body swiper">
+                    <div class="reviews__wrapper swiper-wrapper">
+                        <div class="reviews__slide swiper-slide">
+                            <div class="review">
+                                <div class="review__header">
+                                    <div class="review__img">
+                                        <img src="img/reviews/01.png" alt="Image" class="ibg">
+                                    </div>
+                                    <div class="review__user">
+                                        <strong class="title title_h4">Виктория</strong>
+                                        <time>21.01.2022</time>
+                                    </div>
+                                </div>
+                                <div class="review__body text-l">
+                                    Хожу в Эстилайн много лет. Пользуюсь инъекционной косметологией, диспорт, филлеры.
+                                    Была у разных специалистов, результат отличный. Диспорт ставлю 1 раз в 8-10 месяцев.
+                                    Последний раз была у Лилии, очень легкая рука, практически без боли. Спасибо за
+                                    красоту!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__slide swiper-slide">
+                            <div class="review">
+                                <div class="review__header">
+                                    <div class="review__img">
+                                        <img src="img/reviews/02.png" alt="Image" class="ibg">
+                                    </div>
+                                    <div class="review__user">
+                                        <strong class="title title_h4">Виктория</strong>
+                                        <time>21.01.2022</time>
+                                    </div>
+                                </div>
+                                <div class="review__body text-l">
+                                    Хожу в Эстилайн много лет. Пользуюсь инъекционной косметологией, диспорт, филлеры.
+                                    Была у разных специалистов, результат отличный. Диспорт ставлю 1 раз в 8-10 месяцев.
+                                    Последний раз была у Лилии, очень легкая рука, практически без боли. Спасибо за
+                                    красоту!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__slide swiper-slide">
+                            <div class="review">
+                                <div class="review__header">
+                                    <div class="review__img">
+                                        <img src="img/reviews/01.png" alt="Image" class="ibg">
+                                    </div>
+                                    <div class="review__user">
+                                        <strong class="title title_h4">Виктория</strong>
+                                        <time>21.01.2022</time>
+                                    </div>
+                                </div>
+                                <div class="review__body text-l">
+                                    Хожу в Эстилайн много лет. Пользуюсь инъекционной косметологией, диспорт, филлеры.
+                                    Была у разных специалистов, результат отличный. Диспорт ставлю 1 раз в 8-10 месяцев.
+                                    Последний раз была у Лилии, очень легкая рука, практически без боли. Спасибо за
+                                    красоту!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__slide swiper-slide">
+                            <div class="review">
+                                <div class="review__header">
+                                    <div class="review__img">
+                                        <img src="img/reviews/02.png" alt="Image" class="ibg">
+                                    </div>
+                                    <div class="review__user">
+                                        <strong class="title title_h4">Виктория</strong>
+                                        <time>21.01.2022</time>
+                                    </div>
+                                </div>
+                                <div class="review__body text-l">
+                                    Хожу в Эстилайн много лет. Пользуюсь инъекционной косметологией, диспорт, филлеры.
+                                    Была у разных специалистов, результат отличный. Диспорт ставлю 1 раз в 8-10 месяцев.
+                                    Последний раз была у Лилии, очень легкая рука, практически без боли. Спасибо за
+                                    красоту!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+        </section>
+        <section class="contacts">
+            <div class="contacts__container">
+                <div class="contacts__inner">
+                    <div class="contacts__col">
+                        <h2 class="contacts__title title title_h2"><span class="title-dec">Контакты</span></h2>
+                        <div class="contacts-items">
+                            <div class="item-contact">
+                                <div class="item-contact__label">г. Екатеринбург</div>
+                                <div class="item-contact__value">ул. Попова, 33А</div>
+                            </div>
+                            <div class="item-contact">
+                                <div class="item-contact__label">телефон</div>
+                                <div class="item-contact__value"><a href="tel:+73432700040">+7 (343) 270-00-40</a></div>
+                                <div class="item-contact__value"><a href="tel:+73433594042">+7 (343) 359-40-42</a></div>
+                            </div>
+                            <div class="item-contact">
+                                <div class="item-contact__label">ежедневно</div>
+                                <div class="item-contact__value">с 9:00 до 21:00</div>
+                            </div>
+                            <div class="item-contact">
+                                <div class="item-contact__label">email</div>
+                                <div class="item-contact__value"><a href="mailto:info@e-line.ru">info@e-line.ru</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts__col">
+                        <div class="contacts__map">
+                            <div style="position:relative;height: 100%;overflow:hidden;"><a
+                                    href="https://yandex.by/maps/54/yekaterinburg/?utm_medium=mapframe&utm_source=maps"
+                                    style="color:#eee;font-size:12px;position:absolute;top:0px;">Екатеринбург</a><a
+                                    href="https://yandex.by/maps/54/yekaterinburg/house/ulitsa_popova_33a/YkkYcw9gTEMPQFtsfXRycnxrZg==/?indoorLevel=1&ll=60.580568%2C56.833083&utm_medium=mapframe&utm_source=maps&z=17.06"
+                                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Попова, 33А —
+                                Яндекс Карты</a>
+                                <iframe src="https://yandex.by/map-widget/v1/?indoorLevel=1&ll=60.580568%2C56.833083&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjA5NjU2MBJu0KDQvtGB0YHQuNGPLCDQodCy0LXRgNC00LvQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCV0LrQsNGC0LXRgNC40L3QsdGD0YDQsywg0YPQu9C40YbQsCDQn9C-0L_QvtCy0LAsIDMz0JAiCg2BUnJCFRRVY0I%2C&z=17.06"
+                                        width="100%" height="100%" frameborder="0" allowfullscreen="true"
+                                        style="position:relative;"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts__col">
+                        <div class="form">
+                            <div class="form__title title title_h3">Записаться на консультацию</div>
+                            <form action="#" method="post">
+                                <div class="form__inner">
+                                    <div class="form__row">
+                                        <div class="form__line">
+                                            <input class="form__input input" data-required autocomplete="off" type="text"
+                                                   name="form[]"
+                                                   placeholder="Имя">
+                                        </div>
+                                    </div>
+                                    <div class="form__row">
+                                        <div class="form__line">
+                                            <input class="form__input input" data-required autocomplete="off" type="text"
+                                                   name="form[]"
+                                                   placeholder="Номер телефона">
+                                        </div>
+                                    </div>
+                                    <div class="form__row">
+                                        <div class="form__line">
+                                            <select name="form[]" data-class-modif="form">
+                                                <option value="" selected>Выбор услуги</option>
+                                                <option value="1">Пункт1</option>
+                                                <option value="2">Пункт2</option>
+                                                <option value="3">Пункт3</option>
+                                                <option value="4">Пункт4</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form__row">
+                                        <div class="checkbox">
+                                            <input id="c_0" data-error="Ошибка" checked class="checkbox__input" type="checkbox"
+                                                   value="1" name="form[]">
+                                            <label for="c_0" class="checkbox__label">
+                                                <span class="checkbox__text">Я принимаю условия <a href="">Пользовательского соглашения</a></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form__row">
+                                        <button class="form__button button" type="submit">Перезвонить мне</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @@include('html/_footer.htm',{})
+</div>
+@@include('html/_call.htm',{})
+@@include('html/_sale.htm',{})
+@@include('html/_js.htm',{})
+</body>
+</html>

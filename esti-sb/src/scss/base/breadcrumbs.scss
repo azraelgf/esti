@@ -1,0 +1,37 @@
+//breadcrumbs
+.breadcrumbs {
+  font-size: toRem(12);
+  font-weight: 300;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: toRem(3);
+  }
+
+  &__item {
+    line-height: math.div(20, 16);
+  }
+
+  &__current {
+
+  }
+
+  &__link {
+    opacity: .5;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease-in-out;
+
+    &::after {
+      content: "\e901";
+      @extend %ic;
+      font-size: toRem(8);
+      margin: 0 toEm(10, 8);
+    }
+
+    &:active {
+      color: var(--inverse);
+    }
+  }
+}

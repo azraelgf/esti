@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Верстка «NEW_PROJECT_NAME»</title>
+</head>
+<body>
+<div class="rootpage">
+    <div class="rootpage__pages">
+        <h1>Верстка «NEW_PROJECT_NAME»</h1>
+        <div class="rootpage__info">
+            Особенности проекта
+        </div>
+        <h2>Готовые страницы:</h2>
+        <ol class="rootpage__list">
+            <li><a target="_blank" href="home.html">Главная</a></li>
+            <li><a target="_blank" href="services.html">Услуги</a></li>
+            <li><a target="_blank" href="service-single.html">Лазерная эпиляция</a></li>
+            <li><a target="_blank" href="price.html">Цены</a></li>
+            <li><a target="_blank" href="team.html">специалисты</a></li>
+            <li><a target="_blank" href="team-single.html">Специалист</a></li>
+            <li><a target="_blank" href="blog.html">Статьи</a></li>
+            <li><a target="_blank" href="blog-single.html">Как алкоголь влияет на вашу кожу?</a></li>
+            <li><a target="_blank" href="sales.html">АКЦИИ</a></li>
+            <li><a target="_blank" href="preparaty.html">Препараты</a></li>
+            <li><a target="_blank" href="preparaty-single.html">Препарат: SWEET SKIN SYSTEM</a></li>
+            <li><a target="_blank" href="text-block.html">Заголовок</a></li>
+            <li><a target="_blank" href="contacts.html">КОНТАКТЫ</a></li>
+            <li><a target="_blank" href="searchform.html">Страница поиска</a></li>
+        </ol>
+        <h2>Popups:</h2>
+        <ol class="rootpage__list">
+            <li><a target="_blank" href="index.html#"></a></li>
+        </ol>
+    </div>
+</div>
+</body>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
+
+    *, *::before, *::after {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        min-width: 320px;
+        width: 100%;
+        color: #252424;
+        background-color: #FDFAF9;
+    }
+
+    body {
+        font-family: Montserrat, sans-serif;
+        line-height: 1;
+        font-size: 1rem;
+    }
+
+    a {
+        text-decoration: underline;
+        color: #252424
+    }
+
+    a:visited {
+        text-decoration: underline;
+        color: #B9A7F8;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    img {
+        vertical-align: top;
+    }
+
+    .rootpage {
+        padding: 30px;
+    }
+
+    .rootpage__pages {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .rootpage__links {
+        display: grid;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .rootpage__links-box {
+        display: flex;
+        gap: 30px;
+    }
+
+    .social-img {
+        display: grid;
+        grid-template-columns: repeat(2, 260px);
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .social-img img {
+        width: 260px;
+        height: 300px;
+    }
+
+    .social-img p {
+        text-align: center;
+        font-size: .8rem;
+        opacity: .4;
+    }
+
+    h1 {
+        color: #252424;
+        font-size: 2.5rem;
+        margin: 0 0 1.25rem 0;
+    }
+
+    h2 {
+        color: #252424;
+        font-size: 1.25rem;
+        margin: 0 0 1rem 0;
+    }
+
+    .rootpage__info {
+        line-height: 140%;
+        margin: 0 0 1.5rem 0;
+    }
+
+    .rootpage__list {
+        margin: 0 0 2.25rem 1.25rem;
+    }
+
+    .rootpage__list li:not(:last-child) {
+        margin: 0 0 15px 0;
+    }
+
+    .rootpage__contacts,
+    .rootpage__tnx {
+        padding: 20px 65px;
+        line-height: 140%;
+        max-width: 600px;
+    }
+
+
+    .rootpage__contacts {
+        position: relative;
+    }
+
+    .rootpage__tnx:after,
+    .rootpage__contacts:after {
+        position: absolute;
+        filter: blur(.5rem);
+        opacity: .8;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .rootpage__contacts:after {
+        background: #2d3fc2;
+    }
+
+    .rootpage__contacts a {
+        color: #252424;
+    }
+
+    .rootpage__tnx {
+        position: relative;
+    }
+
+    .rootpage__tnx:after {
+        background: #065c08;
+    }
+
+    h2, p {
+        position: relative;
+        z-index: 2;
+    }
+
+    @media (min-width: 767px) {
+        .social-img p {
+            grid-column: span 2;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .rootpage {
+            padding: 30px 15px;
+        }
+
+        h1 {
+            font-size: 1.85rem;
+            margin: 0 0 1.25rem 0;
+        }
+
+        h2 {
+            font-size: 1.125rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .rootpage__contacts,
+        .rootpage__tnx {
+            padding: 20px;
+        }
+
+        .rootpage__links-box {
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .social-img {
+            justify-items: center;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .rootpage__tnx, .rootpage__contacts {
+            width: 100%;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        h2 {
+            margin-bottom: .55rem;
+        }
+
+        .rootpage__tnx, .rootpage__contacts {
+            text-align: center;
+        }
+
+        .social-img img {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+</html>

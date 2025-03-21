@@ -1,0 +1,23 @@
+.navigation-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: toRem(15) toRem(30);
+  @include adaptiveValue("margin-bottom", 30, 20);
+  @media (max-width: $mobileSmall) {
+    flex-wrap: wrap;
+  }
+  // .navigation-block__title
+  &__title {
+  }
+
+  // .navigation-block__left
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: toRem(30);
+    @media (max-width: $mobileSmall) {
+      flex: 1 1 100%;
+    }
+  }
+}

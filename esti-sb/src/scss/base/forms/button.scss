@@ -1,0 +1,75 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+
+.button {
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  font-weight: 500;
+  min-height: toRem(46);
+  box-shadow: 0 2px 4px 0 rgba(47, 47, 47, 0.1);
+  background: var(--accent);
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
+  @include adaptiveValue("font-size", 16, 14);
+  @media (min-width: $tablet) {
+    min-width: toRem(318);
+  }
+  @media (max-width: $mobileSmall) {
+    min-width: 100%;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--white);
+      background-color: var(--accent);
+      border-color: var(--inverse);
+    }
+  }
+
+  &:active {
+    border-color: var(--inverse);
+  }
+
+  &_outline {
+    border-color: var(--primary30);
+    color: var(--primary);
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &--fw {
+    width: 100%;
+  }
+
+  &.form__button {
+    min-width: 100%;
+  }
+
+  .header-top & {
+    &:before {
+      @media (min-width: $mobile) {
+        display: none;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      padding: 0;
+      border: none;
+      min-height: initial;
+      font-size: toRem(20);
+      color: var(--accent);
+      span {
+        display: none;
+      }
+    }
+    @media (max-width: $mobileSmall) {
+      min-width: initial;
+    }
+  }
+
+  .about-item__info & {
+    @include adaptiveValue("margin-top", 35, 20);
+  }
+}

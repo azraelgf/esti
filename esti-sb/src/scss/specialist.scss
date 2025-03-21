@@ -1,0 +1,48 @@
+.specialist {
+  display: grid;
+  column-gap: toRem(16);
+  grid-template-columns: repeat(4, 1fr);
+  @include adaptiveValue("row-gap", 60, 16);
+  @media (max-width: $mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $mobileSmall) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+//====================================================================================================
+.info-specialist {
+  // .info-specialist__container
+  &__container {
+  }
+
+  // .info-specialist__title
+  &__title {
+  }
+
+  ul {
+    padding-left: toRem(20);
+    display: grid;
+    @include adaptiveValue("column-gap", 60, 20, 0, 1320, 992);
+    @include adaptiveValue("row-gap", 30, 10, 0, 1320, 992);
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    li {
+      list-style: disc;
+    }
+  }
+}

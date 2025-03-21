@@ -1,0 +1,31 @@
+.contacts-items {
+  display: grid;
+  @include adaptiveValue("gap", 30, 20);
+  @media (max-width: $mobileSmall) {
+   grid-auto-columns: auto;
+  }
+}
+
+.item-contact {
+  display: grid;
+  gap: toRem(4);
+  line-height: 1.5;
+  // .item-contact__label
+  &__label {
+    color: var(--inverse);
+    opacity: .6;
+  }
+
+  // .item-contact__value
+  &__value {
+    font-size: toRem(16);
+
+    a {
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+.tabs {
+  // .tabs__navigation
+  &__navigation {
+    display: flex;
+    flex-wrap: wrap;
+    @include adaptiveValue("margin-bottom", 60, 20);
+
+    &_grid {
+      display: grid;
+      gap: toRem(16);
+      grid-template-columns: repeat(4, 1fr);
+      @media (max-width:$mobile){
+        gap: toRem(5);
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  // .tabs__title
+  &__title {
+    flex: 1 1 20%;
+    font-weight: 500;
+    border: 1px solid var(--primary30);
+    padding: toRem(14) toRem(15);
+    transition: all 0.3s ease-in-out;
+    @include adaptiveValue("font-size", 16, 14);
+    @media (max-width: $mobile) {
+      flex: 1 1 32%;
+    }
+    @media (max-width: $mobileSmall) {
+      flex: 1 1 47%;
+    }
+
+    &._tab-active {
+      box-shadow: 0 2px 4px 0 rgba(47, 47, 47, 0.1);
+      background: var(--brown);
+      border-color: var(--brown);
+      color: var(--white);
+    }
+
+    &:active {
+      border-color: var(--brown-active);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: var(--brown);
+        color: var(--white);
+        border-color: var(--brown-active);
+      }
+    }
+  }
+
+  // .tabs__content
+  &__content {
+  }
+
+  // .tabs__body
+  &__body {
+
+  }
+}
+
+//====================================================================================================
+.tabs {
+  // .tabs__table
+  &__table {
+  }
+}
+
+.table {
+  display: grid;
+  @include adaptiveValue("column-gap", 100, 30, 0, 1320, 992);
+  @include adaptiveValue("row-gap", 16, 10, 0, 1320, 992);
+  @media (min-width: $mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  // .table__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+    justify-content: space-between;
+  }
+
+  // .table__label
+  &__label {
+
+  }
+
+  // .table__value
+  &__value {
+    white-space: nowrap;
+  }
+
+  &_one {
+    width: 100%;
+    @media (min-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+//====================================================================================================
+.service-tabs {
+  display: flex;
+  @include adaptiveValue("gap", 50, 20, 0, 1320, 992);
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
+
+  &__block {
+    @media (min-width: $mobile) {
+      flex: 0 0 toRem(282);
+    }
+    @media (max-width: $mobile) {
+      flex: 1 1 100%;
+      overflow: auto;
+    }
+
+    ._price & {
+      @media (min-width: $mobile) {
+        flex: 0 0 toRem(282);
+      }
+      @media (min-width: $tablet) {
+        flex: 0 0 toRem(380);
+      }
+    }
+  }
+
+  // .service-tabs__header
+  &__header {
+  }
+
+  // .service-tabs__navigation
+  &__navigation {
+    text-align: left;
+    align-items: flex-start;
+    display: flex;
+    gap: toRem(10);
+
+    @media (min-width: $tablet) {
+      white-space: nowrap;
+    }
+    @media (min-width: $mobile) {
+      flex-direction: column;
+    }
+    @media (max-width: $mobile) {
+      overflow: auto;
+      padding-bottom: toRem(5);
+    }
+  }
+
+  // .service-tabs__title
+  &__title {
+    text-align: left;
+    padding: toRem(10) 0;
+    border-bottom: toRem(1) solid transparent;
+    transition: all 0.3s ease-in-out;
+    @media (max-width: $mobile) {
+      white-space: nowrap;
+      min-width: fit-content;
+    }
+
+    &._tab-active {
+      font-weight: 600;
+      border-color: #BCA7F7;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: #BCA7F7;
+      }
+    }
+  }
+
+  // .service-tabs__content
+  &__content {
+    .services-page & {
+      @include adaptiveValue("padding-top", 60, 20, 0, 1320, 992);
+      @media (max-width: $tablet) {
+        padding-top: 0;
+      }
+    }
+
+    ._price & {
+      padding-top: 0;
+      width: 100%;
+    }
+  }
+
+  // .service-tabs__body
+  &__body {
+  }
+}
+

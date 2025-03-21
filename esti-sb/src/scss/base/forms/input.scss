@@ -1,0 +1,145 @@
+//<INPUT>
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input {
+  border-radius: 0 !important;
+  width: 100%;
+  display: block;
+  padding: 0px 20px;
+  height: toRem(46);
+  caret-color: inherit;
+  font-size: toRem(14);
+
+  &._form-focus {
+
+  }
+
+  &._form-error {
+  }
+
+  &:focus {
+    outline: 1px solid var(--inverse);
+    background-color: var(--bg-secondary);
+
+    .search-box & {
+    }
+  }
+}
+
+.input[placeholder]:not([data-placeholder-nohiden]) {
+  &::placeholder {
+    opacity: .5;
+    transition: opacity 0.3s;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
+  }
+}
+
+textarea.input {
+  resize: none;
+  padding: 0px 0px;
+}
+
+//====================================================================================================
+.search-box {
+  flex: 1 1 auto;
+  // .search-box__inner
+  &__container {
+    max-width: toRem(830);
+  }
+
+  // .search-box__tags
+  &__tags {
+    display: flex;
+    gap: toRem(14);
+    flex-wrap: wrap;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: toRem(20);
+    @include adaptiveValue("gap", 50, 20);
+
+    form {
+      width: 100%;
+    }
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__list {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    translate: 0 toRem(20);
+    z-index: 2;
+    background-color: #FBF9FF;
+    border: 2px solid rgba(#6C61A5, .6);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    @include adaptiveValue("padding", 30, 20);
+
+    .search-list-open & {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    li + li {
+      margin-top: toRem(10);
+    }
+
+    a {
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // .search-box__input
+  &__input {
+    border: 1px solid var(--primary30);
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  // .search-box__btn
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: toRem(20);
+    translate: 0 -50%;
+    font-size: toRem(20);
+  }
+}
+
+.tag {
+  padding: toRem(5) toRem(16);
+  border: 1px solid rgba(#C5B2FF, .8);
+  transition: all 0.3s ease-in-out;
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--white);
+      background-color: rgba(#C5B2FF, .8);
+    }
+  }
+  @media (max-width:$mobileSmall){
+    padding: toRem(3) toRem(8);
+  }
+}

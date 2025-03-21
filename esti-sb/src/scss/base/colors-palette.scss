@@ -1,0 +1,28 @@
+// ===============
+// colors palette
+// ===============
+:root {
+	//fonts
+	--primary-font: 'Mulish';
+	--secondary-font: 'Lora';
+	// Site colors
+	// =================================================================
+	--primary: #252424; // Site main color
+	--primary30: rgba(37, 36, 36,.3); // Site main color
+	--primary50: rgba(37, 36, 36,.5); // Site main color
+	--white: #fff; // Site main color
+	--accent: #B9A7F8; // Site accent color
+	--violet: #C5B2FF; // Site accent color
+	--accent80: rgba(185, 167, 248,.8); // Site accent color
+	--accent20: rgba(185, 167, 248,.2); // Site accent color
+	--inverse: #6C61A5; // Site inverse color
+	--inverse60: rgba(108, 97, 165,.6); // Site inverse color
+	--brown: #C7B19A; // Site inverse color
+	--brown-active: #6A543D; // Site inverse color
+	--red: #FF9397; // Site inverse color
+	--rose: #FFE0E1; // Site inverse color
+
+	// =================================================================
+	--bg-primary: #FDFAF9; // BG primary background color
+	--bg-secondary: rgba(210, 195, 255,.1); // BG primary background color
+}

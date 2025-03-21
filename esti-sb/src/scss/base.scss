@@ -1,0 +1,63 @@
+// General file for form elements
+// To enable/disable styles for a specific form element, see base/forms/forms.scss
+@import "base/forms/forms";
+
+// Styles for menus + burger
+ @import "base/menu";
+
+//Стили хлебных крошек
+@import "base/breadcrumbs";
+
+// Styles for popups
+ @import "base/popup";
+
+// Styles for spoilers
+ @import "base/spollers";
+
+// Styles for tabs
+ @import "base/tabs";
+
+// Styles for responsive images (IBG)
+.ibg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	&--top {
+		object-position: top;
+	}
+	&--bottom {
+		object-position: bottom;
+	}
+	&--left {
+		object-position: left;
+	}
+	&--right {
+		object-position: right;
+	}
+	&--contain {
+		object-fit: contain;
+	}
+}
+
+//скрыть часть текста
+%hide-text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+//ссылка для всего блока
+%stretched-link {
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		pointer-events: auto;
+		content: "";
+	}
+}

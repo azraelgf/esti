@@ -1,0 +1,65 @@
+// General file for form elements
+.swiper-controls {
+  display: flex;
+  gap: toRem(20);
+
+  .navigation-block & {
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+}
+
+
+.swiper-button {
+  flex: 0 0 toRem(40);
+  width: toRem(40);
+  height: toRem(40);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--violet);
+  color: var(--violet);
+  opacity: .4;
+  transition: opacity 0.3s ease-in-out;
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:before {
+    font-size: toRem(8);
+  }
+
+  &-prev {
+    rotate: 180deg;
+  }
+
+  &-next {
+  }
+}
+
+.swiper-pagination {
+  margin-top: toRem(20);
+  display: flex;
+  gap: toRem(10);
+  justify-content: center;
+  @media (min-width:$mobileSmall){
+    display: none;
+  }
+
+  &-bullet {
+    width: toRem(8);
+    height: toRem(8);
+    border-radius: 50%;
+    background-color: var(--accent);
+    opacity: .4;
+    transition: opacity 0.3s ease-in-out;
+
+    &-active {
+      opacity: 1;
+    }
+  }
+}
