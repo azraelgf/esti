@@ -6874,25 +6874,26 @@ PERFORMANCE OF THIS SOFTWARE.
         }
     }
     if (document.querySelector(".buttons")) {
-        const buttons = document.querySelectorAll(".buttons button");
         const specialists = document.querySelectorAll(".team-item");
         function filterSpecialists(category) {
             specialists.forEach((specialist => {
-                const specialistCategory = specialist.getAttribute("data-category");
-                if (category === "all" || specialistCategory === category) specialist.classList.remove("hidden"); else specialist.classList.add("hidden");
+                const categories = specialist.dataset.category.split(",");
+                specialist.classList.toggle("hidden", category !== "all" && !categories.includes(category));
             }));
         }
-        buttons.forEach((button => {
-            button.addEventListener("click", (() => {
-                const category = button.getAttribute("data-category");
-                buttons.forEach((btn => btn.classList.remove("_tab-active")));
-                button.classList.add("_tab-active");
-                filterSpecialists(category);
-            }));
+        const buttonsContainer = document.querySelector(".buttons");
+        if (buttonsContainer) buttonsContainer.addEventListener("click", (event => {
+            const button = event.target.closest("button[data-category]");
+            if (!button) return;
+            document.querySelectorAll(".buttons button").forEach((btn => btn.classList.remove("_tab-active")));
+            button.classList.add("_tab-active");
+            filterSpecialists(button.dataset.category);
         }));
         const allButton = document.querySelector('button[data-category="all"]');
-        allButton.classList.add("_tab-active");
-        filterSpecialists("all");
+        if (allButton) {
+            allButton.classList.add("_tab-active");
+            filterSpecialists("all");
+        } else console.warn('Кнопка "Все" (data-category="all") не найдена!');
     }
     window["FLS"] = false;
     menuInit();
