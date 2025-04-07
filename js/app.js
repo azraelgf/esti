@@ -1,6 +1,6 @@
 (() => {
     "use strict";
-    const flsModules = {};
+    const modules_flsModules = {};
     let isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
@@ -349,7 +349,7 @@
         bodyUnlock();
         document.documentElement.classList.remove("menu-open");
     }
-    function FLS(message) {
+    function functions_FLS(message) {
         setTimeout((() => {
             if (window.FLS) console.log(message);
         }), 0);
@@ -604,7 +604,7 @@
             history.pushState("", "", this.hash);
         }
         _removeHash() {
-            history.pushState("", "", window.location.href.split("#")[0]);
+            history.pushState("", "", window.location.pathname + window.location.search);
         }
         _focusCatch(e) {
             const focusable = this.targetOpen.element.querySelectorAll(this._focusEl);
@@ -639,8 +639,8 @@
             }
         }
     }
-    flsModules.popup = new Popup({});
-    let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+    modules_flsModules.popup = new Popup({});
+    let gotoblock_gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
         const targetBlockElement = document.querySelector(targetBlock);
         if (targetBlockElement) {
             let headerItem = "";
@@ -675,62 +675,9 @@
                     behavior: "smooth"
                 });
             }
-            FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
-        } else FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
+            functions_FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
+        } else functions_FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
     };
-    function formFieldsInit(options = {
-        viewPass: false,
-        autoHeight: false
-    }) {
-        document.body.addEventListener("focusin", (function(e) {
-            const targetElement = e.target;
-            if (targetElement.tagName === "INPUT" || targetElement.tagName === "TEXTAREA") {
-                if (!targetElement.hasAttribute("data-no-focus-classes")) {
-                    targetElement.classList.add("_form-focus");
-                    targetElement.parentElement.classList.add("_form-focus");
-                }
-                formValidate.removeError(targetElement);
-                targetElement.hasAttribute("data-validate") ? formValidate.removeError(targetElement) : null;
-            }
-        }));
-        document.body.addEventListener("focusout", (function(e) {
-            const targetElement = e.target;
-            if (targetElement.tagName === "INPUT" || targetElement.tagName === "TEXTAREA") {
-                if (!targetElement.hasAttribute("data-no-focus-classes")) {
-                    targetElement.classList.remove("_form-focus");
-                    targetElement.parentElement.classList.remove("_form-focus");
-                }
-                targetElement.hasAttribute("data-validate") ? formValidate.validateInput(targetElement) : null;
-            }
-        }));
-        if (options.viewPass) document.addEventListener("click", (function(e) {
-            let targetElement = e.target;
-            if (targetElement.closest('[class*="__viewpass"]')) {
-                let inputType = targetElement.classList.contains("_viewpass-active") ? "password" : "text";
-                targetElement.parentElement.querySelector("input").setAttribute("type", inputType);
-                targetElement.classList.toggle("_viewpass-active");
-            }
-        }));
-        if (options.autoHeight) {
-            const textareas = document.querySelectorAll("textarea[data-autoheight]");
-            if (textareas.length) {
-                textareas.forEach((textarea => {
-                    const startHeight = textarea.hasAttribute("data-autoheight-min") ? Number(textarea.dataset.autoheightMin) : Number(textarea.offsetHeight);
-                    const maxHeight = textarea.hasAttribute("data-autoheight-max") ? Number(textarea.dataset.autoheightMax) : 1 / 0;
-                    setHeight(textarea, Math.min(startHeight, maxHeight));
-                    textarea.addEventListener("input", (() => {
-                        if (textarea.scrollHeight > startHeight) {
-                            textarea.style.height = `auto`;
-                            setHeight(textarea, Math.min(Math.max(textarea.scrollHeight, startHeight), maxHeight));
-                        }
-                    }));
-                }));
-                function setHeight(textarea, height) {
-                    textarea.style.height = `${height}px`;
-                }
-            }
-        }
-    }
     let formValidate = {
         getErrors(form) {
             let error = 0;
@@ -784,11 +731,11 @@
                     const checkbox = checkboxes[index];
                     checkbox.checked = false;
                 }
-                if (flsModules.select) {
+                if (modules_flsModules.select) {
                     let selects = form.querySelectorAll("div.select");
                     if (selects.length) for (let index = 0; index < selects.length; index++) {
                         const select = selects[index].querySelector("select");
-                        flsModules.select.selectBuild(select);
+                        modules_flsModules.select.selectBuild(select);
                     }
                 }
             }), 0);
@@ -797,71 +744,6 @@
             return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
         }
     };
-    function formSubmit() {
-        const forms = document.forms;
-        if (forms.length) for (const form of forms) {
-            form.addEventListener("submit", (function(e) {
-                const form = e.target;
-                formSubmitAction(form, e);
-            }));
-            form.addEventListener("reset", (function(e) {
-                const form = e.target;
-                formValidate.formClean(form);
-            }));
-        }
-        async function formSubmitAction(form, e) {
-            const error = !form.hasAttribute("data-no-validate") ? formValidate.getErrors(form) : 0;
-            if (error === 0) {
-                const ajax = form.hasAttribute("data-ajax");
-                if (ajax) {
-                    e.preventDefault();
-                    const formAction = form.getAttribute("action") ? form.getAttribute("action").trim() : "#";
-                    const formMethod = form.getAttribute("method") ? form.getAttribute("method").trim() : "GET";
-                    const formData = new FormData(form);
-                    form.classList.add("_sending");
-                    const response = await fetch(formAction, {
-                        method: formMethod,
-                        body: formData
-                    });
-                    if (response.ok) {
-                        let responseResult = await response.json();
-                        form.classList.remove("_sending");
-                        formSent(form, responseResult);
-                    } else {
-                        alert("Помилка");
-                        form.classList.remove("_sending");
-                    }
-                } else if (form.hasAttribute("data-dev")) {
-                    e.preventDefault();
-                    formSent(form);
-                }
-            } else {
-                e.preventDefault();
-                if (form.querySelector("._form-error") && form.hasAttribute("data-goto-error")) {
-                    const formGoToErrorClass = form.dataset.gotoError ? form.dataset.gotoError : "._form-error";
-                    gotoBlock(formGoToErrorClass, true, 1e3);
-                }
-            }
-        }
-        function formSent(form, responseResult = ``) {
-            document.dispatchEvent(new CustomEvent("formSent", {
-                detail: {
-                    form
-                }
-            }));
-            setTimeout((() => {
-                if (flsModules.popup) {
-                    const popup = form.dataset.popupMessage;
-                    popup ? flsModules.popup.open(popup) : null;
-                }
-            }), 0);
-            formValidate.formClean(form);
-            formLogging(`Форма отправлена!`);
-        }
-        function formLogging(message) {
-            FLS(`[Форми]: ${message}`);
-        }
-    }
     const SELECT_EVENTS = {
         CLICK: "click",
         FOCUSIN: "focusin",
@@ -1239,7 +1121,7 @@
             if (this.config.logging) console[type](`[SelectConstructor] ${message}`);
         }
     }
-    flsModules.select = new SelectConstructor({});
+    modules_flsModules.select = new SelectConstructor({});
     function ssr_window_esm_isObject(obj) {
         return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
     }
@@ -4924,14 +4806,14 @@
                     const noHeader = gotoLink.hasAttribute("data-goto-header") ? true : false;
                     const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
                     const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
-                    if (flsModules.fullpage) {
+                    if (modules_flsModules.fullpage) {
                         const fullpageSection = document.querySelector(`${gotoLinkSelector}`).closest("[data-fp-section]");
                         const fullpageSectionId = fullpageSection ? +fullpageSection.dataset.fpId : null;
                         if (fullpageSectionId !== null) {
-                            flsModules.fullpage.switchingSection(fullpageSectionId);
+                            modules_flsModules.fullpage.switchingSection(fullpageSectionId);
                             document.documentElement.classList.contains("menu-open") ? menuClose() : null;
                         }
-                    } else gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+                    } else gotoblock_gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
                     e.preventDefault();
                 }
             } else if (e.type === "watcherCallback" && e.detail) {
@@ -4954,7 +4836,7 @@
         if (getHash()) {
             let goToHash;
             if (document.querySelector(`#${getHash()}`)) goToHash = `#${getHash()}`; else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
-            goToHash ? gotoBlock(goToHash, true, 500, 20) : null;
+            goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 20) : null;
         }
     }
     setTimeout((() => {
@@ -6690,7 +6572,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 })
             });
         }));
-        flsModules.gallery = galleyItems;
+        modules_flsModules.gallery = galleyItems;
     }
     class DynamicAdapt {
         constructor(type) {
@@ -6899,10 +6781,5 @@ PERFORMANCE OF THIS SOFTWARE.
     menuInit();
     spollers();
     tabs();
-    formFieldsInit({
-        viewPass: false,
-        autoHeight: false
-    });
-    formSubmit();
     pageNavigation();
 })();
